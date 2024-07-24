@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="modeloIsmo">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0176561649332988 -0.00119978537611564 0.0278893006013416"
+        rpy="0 0 0" />
+      <mass
+        value="2.87613876945507" />
+      <inertia
+        ixx="0.0264142141588292"
+        ixy="2.97958619881934E-08"
+        ixz="-4.01911037621279E-08"
+        iyy="0.0337096586279081"
+        iyz="-0.000151931353131123"
+        izz="0.0586642095498389" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modeloIsmo/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modeloIsmo/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_wheel">
+    <inertial>
+      <origin
+        xyz="-3.14330033453561E-06 -6.5673863186063E-06 0.0291446115167832"
+        rpy="0 0 0" />
+      <mass
+        value="0.958008205459542" />
+      <inertia
+        ixx="0.00158534602463517"
+        ixy="1.36072608890669E-08"
+        ixz="1.65486211393434E-07"
+        iyy="0.00158536794192628"
+        iyz="3.4575503784655E-07"
+        izz="0.0027026878956097" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modeloIsmo/meshes/left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modeloIsmo/meshes/left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leftwheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.18 0.022"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="6.5"
+      velocity="40" />
+    <dynamics
+      friction="0.1" />
+  </joint>
+  <link
+    name="right_wheel">
+    <inertial>
+      <origin
+        xyz="9.03817139394358E-08 -7.28029456295576E-06 -0.0291446514181855"
+        rpy="0 0 0" />
+      <mass
+        value="0.95800858734738" />
+      <inertia
+        ixx="0.00158533951727554"
+        ixy="-4.33732580157848E-10"
+        ixz="4.75834716119835E-09"
+        iyy="0.00158537444928592"
+        iyz="-3.83287868957538E-07"
+        izz="0.0027026878956097" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modeloIsmo/meshes/right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modeloIsmo/meshes/right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rightwheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.18 0.022"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="6.5"
+      velocity="40" />
+    <dynamics
+      friction="0.1" />
+  </joint>
+  <link
+    name="front_caster">
+    <inertial>
+      <origin
+        xyz="0.00719645182828996 5.27849148379703E-05 -0.0129869427741275"
+        rpy="0 0 0" />
+      <mass
+        value="0.0345228972247051" />
+      <inertia
+        ixx="8.7256705327778E-06"
+        ixy="1.6376475932055E-09"
+        ixz="1.70393496562884E-06"
+        iyy="8.4680866315482E-06"
+        iyz="1.28132864003393E-08"
+        izz="9.95030505700405E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modeloIsmo/meshes/front_caster.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.780392156862745 0.76078431372549 0.741176470588235 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modeloIsmo/meshes/front_caster.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frontcaster_joint"
+    type="continuous">
+    <origin
+      xyz="0.18128 -0.0025 -0.003"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_caster" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="front_caster_wheel">
+    <inertial>
+      <origin
+        xyz="0 0 -1.30104260698261E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.0241433930709178" />
+      <inertia
+        ixx="3.43879451958221E-06"
+        ixy="3.8176800548973E-22"
+        ixz="1.46535404494117E-08"
+        iyy="3.4386872810978E-06"
+        iyz="-4.2589068907916E-21"
+        izz="5.44101180937204E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modeloIsmo/meshes/front_caster_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modeloIsmo/meshes/front_caster_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frontcasterwheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.019933 0.00014587 -0.0335"
+      rpy="1.5708 0 0" />
+    <parent
+      link="front_caster" />
+    <child
+      link="front_caster_wheel" />
+    <axis
+      xyz="0.0073181 0 0.99997" />
+    <dynamics
+      friction="0.1" />
+  </joint>
+  <link
+    name="back_caster">
+    <inertial>
+      <origin
+        xyz="-0.00719637451878957 6.26008290069229E-05 -0.012986943563235"
+        rpy="0 0 0" />
+      <mass
+        value="0.0345228978243338" />
+      <inertia
+        ixx="8.72565670210285E-06"
+        ixy="-2.49113210026529E-09"
+        ixz="-1.70392265602734E-06"
+        iyy="8.46810352891275E-06"
+        iyz="1.45080704401869E-08"
+        izz="9.95030487155889E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modeloIsmo/meshes/back_caster.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.780392156862745 0.76078431372549 0.741176470588235 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modeloIsmo/meshes/back_caster.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="backcaster_joint"
+    type="continuous">
+    <origin
+      xyz="-0.18278 -0.0025 -0.003"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="back_caster" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="back_caster_wheel">
+    <inertial>
+      <origin
+        xyz="0 -6.93889390390723E-18 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0241433930709178" />
+      <inertia
+        ixx="3.43883937316653E-06"
+        ixy="-9.60713764555437E-23"
+        ixz="-1.74508125282442E-08"
+        iyy="3.4386872810978E-06"
+        iyz="2.07092733514153E-21"
+        izz="5.44096695578772E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modeloIsmo/meshes/back_caster_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modeloIsmo/meshes/back_caster_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="backcasterwheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.019933 0.00017372 -0.0335"
+      rpy="1.5708 0 0" />
+    <parent
+      link="back_caster" />
+    <child
+      link="back_caster_wheel" />
+    <axis
+      xyz="0.0087151 0 -0.99996" />
+    <dynamics
+      friction="0.1" />
+  </joint>
+</robot>
