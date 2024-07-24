@@ -376,4 +376,51 @@
     <dynamics
       friction="0.1" />
   </joint>
+
+
+  <!-- Pluggin for simulating the Diferential Traction -->
+  <gazebo>
+    <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+ 
+      <updateRate>100</updateRate>
+      
+      <!-- wheels -->
+      <leftJoint>leftwheel_joint</leftJoint>
+      <rightJoint>rightwheel_joint</rightJoint>
+ 
+      <!-- kinematics in m-->
+      <wheelSeparation>0.252</wheelSeparation>
+      <wheelDiameter>0.165</wheelDiameter>
+ 
+      <!-- limits in NM & rad/s^2-->
+      <wheelTorque>10</wheelTorque>
+      <wheelAcceleration>10.0</wheelAcceleration>
+ 
+      <!-- Receive velocity commands on this ROS topic -->
+      <commandTopic>cmd_vel</commandTopic>
+
+ 
+      <!-- output -->
+      <!-- When false, publish no wheel odometry data to a ROS topic -->
+      <publishOdom>true</publishOdom>
+      
+ 
+      <!-- When true, publish coordinate transform from odom to base_footprint -->
+      <!-- I usually use the robot_localization package to publish this transform -->  
+      <publish_odom_tf>true</publish_odom_tf>
+     
+      <!-- When true, publish coordinate transform from base_link to the wheels -->
+      <!-- The robot_state_publisher package is often used to publish this transform -->  
+      <publishWheelTF>true</publishWheelTF>
+
+      <robotBaseFrame>base_link</robotBaseFrame>
+ 
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom_link</odometryFrame>
+      
+ 
+    </plugin>
+  </gazebo>
+
+
 </robot>
